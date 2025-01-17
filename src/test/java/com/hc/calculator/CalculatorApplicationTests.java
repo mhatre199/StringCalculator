@@ -33,5 +33,11 @@ class CalculatorApplicationTests {
 		assertEquals(15, calculator.Add("1,2,3,4,5"));
 	}
 
+	@Test
+	void testNewlineDelimiter_ReturnsSum() {
+		StringCalculator calculator = new StringCalculator();
+		assertEquals(6, calculator.Add("1\n2,3"));
+	}
+
 
 }
