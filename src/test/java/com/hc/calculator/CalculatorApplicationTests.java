@@ -25,4 +25,13 @@ class CalculatorApplicationTests {
 		StringCalculator calculator = new StringCalculator();
 		assertEquals(3, calculator.Add("1,2"));
 	}
+
+	@Test
+	void testUnknownAmountOfNumbers_ReturnsSum() {
+		StringCalculator calculator = new StringCalculator();
+		assertEquals(10, calculator.Add("1,2,3,4"));
+		assertEquals(15, calculator.Add("1,2,3,4,5"));
+	}
+
+
 }

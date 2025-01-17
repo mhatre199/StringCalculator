@@ -24,7 +24,7 @@ public class StringCalculator {
 			return Integer.parseInt(numbers);
 		}
 
-		String[] tokens = numbers.split(",");
+		String[] tokens = numbers.split(",|\n"); // Split by comma or newline for any number of numbers
 		int sum = 0;
 		for (String token : tokens) {
 			sum += Integer.parseInt(token);
