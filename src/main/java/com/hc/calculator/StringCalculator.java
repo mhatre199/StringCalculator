@@ -32,9 +32,22 @@ public class StringCalculator {
 		}
 		String[] tokens = numbers.split(delimiter); // Split by the identified delimiter(s)
 //		String[] tokens = numbers.split(",|\n");
+
 		int sum = 0;
+		List<Integer> negatives = new ArrayList<>();
+
 		for (String token : tokens) {
-			sum += Integer.parseInt(token);
+			int number = Integer.parseInt(token);
+			if (number < 0) {
+				negatives.add(number); // Collect negative numbers
+			} else {
+				sum += number;
+			}
+		}
+
+
+		if (!negatives.isEmpty()) {
+			throw new IllegalArgumentException("negatives not allowed: " + negatives);
 		}
 		return sum;
 	}
