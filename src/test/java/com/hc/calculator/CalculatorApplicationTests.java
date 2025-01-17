@@ -39,5 +39,12 @@ class CalculatorApplicationTests {
 		assertEquals(6, calculator.Add("1\n2,3"));
 	}
 
+	@Test
+	void testCustomDelimiter_ReturnsSum() {
+		StringCalculator calculator = new StringCalculator();
+		assertEquals(3, calculator.Add("//;\n1;2"));
+		assertEquals(10, calculator.Add("//#\n1#2#3#4"));
+	}
+
 
 }

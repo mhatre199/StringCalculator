@@ -24,7 +24,14 @@ public class StringCalculator {
 			return Integer.parseInt(numbers);
 		}
 
-		String[] tokens = numbers.split(",|\n");
+		String delimiter = ",|\n";
+		if (numbers.startsWith("//")) {
+			int delimiterEnd = numbers.indexOf("\n");
+			delimiter = numbers.substring(2, delimiterEnd); // Extract custom delimiter
+			numbers = numbers.substring(delimiterEnd + 1); // Remove delimiter declaration from input
+		}
+		String[] tokens = numbers.split(delimiter); // Split by the identified delimiter(s)
+//		String[] tokens = numbers.split(",|\n");
 		int sum = 0;
 		for (String token : tokens) {
 			sum += Integer.parseInt(token);
