@@ -61,6 +61,23 @@ class CalculatorApplicationTests {
 		assertEquals("negatives not allowed: [-2, -3]", exception.getMessage());
 	}
 
+	@Test
+	void testNumbersGreaterThan1000_IgnoredInSum() {
+		StringCalculator calculator = new StringCalculator();
+		assertEquals(2, calculator.Add("2,1001"));
+		assertEquals(1002, calculator.Add("1000,2"));
+	}
 
+	@Test
+	void testGetCalledCount_ReturnsCorrectCount() {
+		// Arrange
+		StringCalculator calculator = new StringCalculator();
+
+		// Act
+		calculator.Add("1,2"); // Call Add() once
+
+		// Assert
+		assertEquals(2, calculator.getCalledCount()); // Expect GetCalledCount() to return 2
+	}
 
 }

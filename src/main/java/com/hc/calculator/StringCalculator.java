@@ -16,6 +16,7 @@ public class StringCalculator {
 
 
 	public int Add(String numbers) {
+		count++;
 		if (numbers.isEmpty()) {
 			return 0;
 		}
@@ -51,4 +52,16 @@ public class StringCalculator {
 		}
 		return sum;
 	}
-}
+
+
+	public int getCalledCount() {
+		return count;
+	}
+
+
+
+	}
+
+
+
+
